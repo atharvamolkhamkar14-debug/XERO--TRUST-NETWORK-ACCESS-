@@ -1,0 +1,9 @@
+# Example cloudflared config.yml. Replace hostname and tunnel UUID.
+# Store credentials JSON outside the repository and restrict file permissions.
+tunnel: YOUR_TUNNEL_UUID
+credentials-file: /etc/cloudflared/YOUR_TUNNEL_UUID.json
+
+ingress:
+  - hostname: admin.example.com
+    service: http://127.0.0.1:5000
+  - service: http_status:404
